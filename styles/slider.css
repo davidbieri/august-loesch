@@ -15,6 +15,11 @@ img {vertical-align: middle;}
     display: none;
 }
 
+img.resize {
+    width: 100%; /* you can use px */
+    height: auto;
+}
+
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
