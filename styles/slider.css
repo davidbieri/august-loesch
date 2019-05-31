@@ -5,7 +5,7 @@ img {vertical-align: middle;}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 800px;
+  max-width: 700px;
   position: relative;
   margin: auto;
 }
@@ -18,7 +18,7 @@ img {vertical-align: middle;}
 img.resize {
     width: 100%; /* you can use px */
     height: auto;
-    max-width: 800px;
+    max-width: 700px;
 }
 
 /* Next & previous buttons */
