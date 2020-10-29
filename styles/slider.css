@@ -3,6 +3,14 @@
 .mySlides {display: none}
 img {vertical-align: middle;}
 
+
+/* Timeline container */
+.timeline-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
 /* Slideshow container */
 .slideshow-container {
   max-width: 700px;
