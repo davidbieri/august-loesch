@@ -1,5 +1,9 @@
-/*font-family: 'PT Serif', serif; */
+/*font-family: 'PT Serif', serif; 
+font-family: 'Fira Sans', sans-serif;*/
 
+p {
+font-family: 'PT Serif', serif;	
+}
 
 /* Style the navbar */
 
