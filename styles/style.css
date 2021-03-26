@@ -1,4 +1,8 @@
+font-family: 'PT Serif', serif;
+
+
 /* Style the navbar */
+
 #navbar {
   overflow: hidden;
   background-color: #333;
@@ -30,8 +34,6 @@
 .sticky + .content {
   padding-top: 60px;
 }
-
-
 
 
 @charset "UTF-8";@font-face {
