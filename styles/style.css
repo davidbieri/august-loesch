@@ -28,6 +28,10 @@ font-weight: 700;
   text-decoration: none;
 }
 
+# navbar a:hover {
+  font-weight: 700;
+}
+
 /* Page content */
 .content {
   padding: 16px;
