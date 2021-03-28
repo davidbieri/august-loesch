@@ -1,15 +1,20 @@
 /*font-family: 'PT Serif', serif; 
 font-family: 'Fira Sans', sans-serif;*/
 
-p {
-font-family: 'PT Serif', serif;	
+p, ul {
+  font-family: 'PT Serif', serif;	
 }
 
 h1 {
-font-family: 'PT Sans', sans-serif;	
-font-weight: 700;
+  font-family: 'PT Sans', sans-serif;	
+  font-weight: 700;
 }
 
+
+.w3-display-bottomleft w3-container w3-padding-16 w3-white {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 10px;	
+}
 /* Style the navbar */
 
 #navbar {
@@ -30,6 +35,7 @@ font-weight: 700;
 
 # navbar a:hover {
   font-weight: 700;
+  text-decoration: underline;
 }
 
 /* Page content */
