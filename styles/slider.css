@@ -58,8 +58,9 @@ img.resize {
 
 /* Caption text */
 .text {
+  font-family: 'PT Serif', serif;
   color: #696969;
-  font-size: 15px;
+  font-size: 12px;
   padding: 8px 12px;
   position: absolute;
   bottom: 8px;

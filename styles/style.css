@@ -1,6 +1,11 @@
 /*font-family: 'PT Serif', serif; 
 font-family: 'Fira Sans', sans-serif;*/
 
+body {
+  margin: 0;
+  font-family: 'PT Serif', serif;
+}
+
 p, ul {
   font-family: 'PT Serif', serif;	
 }
