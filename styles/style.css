@@ -1,9 +1,24 @@
 /*font-family: 'PT Serif', serif; 
 font-family: 'Fira Sans', sans-serif;*/
 
+/* CSS reset */
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { background-color: #000; 
+} 
+
 body {
-  margin: 20px;
-  font-family: 'PT Serif', serif;
+  	min-height: 100vh;
+  	max-width: 400px;
+  	margin: 20px;
+	background-color: papayawhip; 
+    margin: 0 auto;
+  	font-family: 'PT Serif', serif;
+  	font-size: 100%;
 }
 
 p, ul {
@@ -18,7 +33,7 @@ h1 {
 
 .w3-display-bottomleft w3-container w3-padding-16 w3-white {
   font-family: 'PT Sans', sans-serif;
-  font-size: 10pt;	
+  font-size: 75%;	
 }
 /* Style the navbar */
 
