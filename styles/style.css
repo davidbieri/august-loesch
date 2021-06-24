@@ -14,16 +14,20 @@ html { background-color: none;
 
 
 body {
-  	min-height: 100vh;
-  	max-width: 760px;
-  	margin: 20px;
+  min-height: 100vh;
+  max-width: 760px;
+  margin: 20px;
+  /*display: flex;*/
+  justify-content: center;
+  align-items: center;
 	background-color: none; 
-    font-family: 'PT Serif', serif;
-  	font-size: 100%;
+  font-family: 'PT Serif', serif;
+  font-size: 100%;
 }
 
 p, ul {
-  font-family: 'PT Serif', serif;	
+  font-family: 'PT Serif', serif;
+  position: inherit;	
 }
 
 h1 {
