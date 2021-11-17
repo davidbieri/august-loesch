@@ -21,7 +21,8 @@ body {
   justify-content: center;
   align-items: center;
 	background-color: none; 
-  font-family: 'PT Serif', serif;
+  /*font-family: 'PT Serif', serif;*/
+  font-family: 'Roboto', sans-serif;
   font-size: 100%;
 }
 
@@ -31,7 +32,7 @@ body {
 }
 
 p, ul {
-  font-family: 'PT Serif', serif;
+  font-family: 'Roboto', sans-serif;
   position: inherit;	
 }
 
