@@ -25,6 +25,11 @@ body {
   font-size: 100%;
 }
 
+@viewport {
+  width: device-width ;
+  zoom: 1.0 ;
+}
+
 p, ul {
   font-family: 'PT Serif', serif;
   position: inherit;	
