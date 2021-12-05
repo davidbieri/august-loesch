@@ -18,16 +18,7 @@
 <script type="text/javascript" src="java/search.js"></script>
 
 <style type="text/css">
-body { 	background-color: white; 
-		font-family: 'PT Serif', serif; 
-		font-size: 90%; 
-		line-height: 1.2; 
-		padding: 1em; 
-		color: #2E2E2E; 
-		margin: auto 2em; 
-		justify-content: center;
-  		align-items: center;
-	}
+
 
 form#quicksearch { width: auto; border-style: solid; border-color: gray; border-width: 1px 0px; padding: 0.7em 0.5em; display:none; position:relative; }
 span#searchstat {padding-left: 1em;}
@@ -46,7 +37,7 @@ div#settings.hidden {display:none;}
 .invalidsearch { background-color: red; }
 input[type="button"] { background-color: #efefef; border: 1px #2E2E2E solid;}
 
-table { width: 100%; empty-cells: show; border-spacing: 0em 0.2em; margin: 1em 0em; border-style: none; }
+table { width: 100%; max-width: 760px; font-size: 90%; empty-cells: show; border-spacing: 0em 0.2em; margin: 1em 0em; border-style: none; }
 th, td { border: 1px gray solid; border-width: 1px 1px; padding: 0.5em; vertical-align: top; text-align: left; }
 th { background-color: #efefef; }
 td + td, th + th { border-left: none; }
@@ -103,12 +94,12 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 </div>
 </form>
 <table id="qs_table" border="1">
-<thead><tr><th width="15%">Author</th><th width="40%">Title</th><th width="5%">Year</th><th width="35%">Journal/Series</th><th width="5%">Type (download/link)</th></tr></thead>
+<thead><tr><th width="15%">Author</th><th width="40%">Title</th><th width="2.5%">Year</th><th width="40%">Journal/Series</th><th width="2.5%">Type</th></tr></thead>
 <tbody><tr id="Loesch1930" class="entry">
 	<td>L&ouml;sch, A.</td>
 	<td>Eine Auseinandersetzung &uuml;ber das Transferproblem <p class="infolinks">[<a href="javascript:toggleInfo('Loesch1930','abstract')">Abstract</a>][<a href="javascript:toggleInfo('Loesch1930','bibtex')">BibTeX</a>]</p></td>
 	<td>1930</td>
-	<td><i>Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche</i><br/>Vol. 54(6), pp. 1093-1106&nbsp;</td>
+	<td><i>Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche</i><br/>Vol. 54(6), pp. 1093-1106</td>
 	<td>article<br/><a href="/docs/schriften/30_TransferProblem_Lösch_SJB30.pdf" target="_blank">download</a></td>
 	</tr>
 <tr id="abs_Loesch1930" class="abstract noshow">
@@ -118,9 +109,9 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1930,
-  author = {L&ouml;sch, August},
-  title = {Eine Auseinandersetzung &uuml;ber das Transferproblem},
-  journal = {Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
+  author = {L\"{o}sch, August},
+  title = {Eine Auseinandersetzung \"{u}ber das Transferproblem},
+  journal = {Schmollers Jahrbuch f\"{u}r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
   year = {1930},
   volume = {54},
   number = {6},
@@ -130,17 +121,17 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 </tr>
 <tr id="Loesch1932" class="entry">
 	<td>L&ouml;sch, A.</td>
-	<td>Was ist vom Geburtebr&uuml;ckgang zu halten? <p class="infolinks">[<a href="javascript:toggleInfo('Loesch1932','bibtex')">BibTeX</a>]</p></td>
+	<td><i>Was ist vom Geburtenr&uuml;ckgang zu halten?</i><p class="infolinks">[<a href="javascript:toggleInfo('Loesch1932','bibtex')">BibTeX</a>]</p></td>
 	<td>1932</td>
 	<td>Heidenheim: Selbstverlag</td>
-	<td>book</br><a href="/docs/schriften/32_Geburtenrückgang1_Lösch_1932.pdf" target="_blank">part 1</a>,&nbsp;<a href="/docs/schriften/32_Geburtenrückgang2_Lösch_1932.pdf" target="_blank">part 2</a></td>
+	<td>book</br><a href="/docs/schriften/32_Geburtenrückgang1_Lösch_1932.pdf" target="_blank">part 1</a>,<br/><a href="/docs/schriften/32_Geburtenrückgang2_Lösch_1932.pdf" target="_blank">part 2</a></td>
 </tr>
 <tr id="bib_Loesch1932" class="bibtex noshow">
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @book{Loesch1932,
-  author = {L&ouml;sch, August},
-  title = {Was ist vom Geburtebr&uuml;ckgang zu halten?},
+  author = {L\"{o}sch, August},
+  title = {Was ist vom Geburtenr\"{u}ckgang zu halten?},
   publisher = {Selbstverlag},
   address = {Heidenheim, Germany}
   year = {1932}
@@ -158,9 +149,9 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1933,
-  author = {L&ouml;sch, August},
-  title = {Review of: Bal&aacute;s, Karl von, Das neue Bev&ouml;lkerungsproblem. Budapest 1932},
-  journal = {Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
+  author = {L\"{o}sch, August},
+  title = {Review of: Bal\'{a}s, Karl von, Das neue Bev\"{o}lkerungsproblem. Budapest 1932},
+  journal = {Schmollers Jahrbuch f\"{u}r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
   year = {1933},
   volume = {57},
   number = {4},
@@ -172,16 +163,16 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 	<td>L&ouml;sch, A.</td>
 	<td>Review of: Burgd&ouml;rfer, Friedrich. Volk ohne Jugend. Heidelberg 1932 <p class="infolinks">[<a href="javascript:toggleInfo('Loesch1933a','bibtex')">BibTeX</a>]</p></td>
 	<td>1933</td>
-	<td><i>Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche</i>i><br/>Vol. 57(2), pp. 278-281&nbsp;</td>
+	<td><i>Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche</i><br/>Vol. 57(2), pp. 278-281&nbsp;</td>
 	<td>article<br/><a href="/docs/schriften/33b_VolkOhneJugendBurgdörferReview_Lösch_SJB33.pdf" target="_blank">download</a></td>
 	</tr>
 <tr id="bib_Loesch1933a" class="bibtex noshow">
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1933a,
-  author = {L&ouml;sch, August},
-  title = {Review of: Burgd&ouml;rfer, Friedrich. Volk ohne Jugend. Heidelberg 1932},
-  journal = {Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
+  author = {L\"{o}sch, August},
+  title = {Review of: Burgd\"{o}rfer, Friedrich. Volk ohne Jugend. Heidelberg 1932},
+  journal = {Schmollers Jahrbuch f\"{u}r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
   year = {1933},
   volume = {57},
   number = {2},
@@ -193,16 +184,16 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 	<td>L&ouml;sch, A.</td>
 	<td>Bev&ouml;lkerungskrise? <p class="infolinks">[<a href="javascript:toggleInfo('Loesch1933b','bibtex')">BibTeX</a>]</p></td>
 	<td>1933</td>
-	<td>Deutscher Lebensraum: Bl&auml;tter für neue deutsche Raum- und Bev&ouml;lkerungspolitik<br/>Vol. 1(1), pp. 82f.&nbsp;</td>
+	<td><i>Deutscher Lebensraum: Bl&auml;tter für neue deutsche Raum- und Bev&ouml;lkerungspolitik</i><br/>Vol. 1(1), pp. 82f.</td>
 	<td>article</td>
 </tr>
 <tr id="bib_Loesch1933b" class="bibtex noshow">
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1933b,
-  author = {L&ouml;sch, August},
-  title = {Bev&ouml;lkerungskrise?},
-  journal = {Deutscher Lebensraum: Bl&auml;tter für neue deutsche Raum- und Bev&ouml;lkerungspolitik},
+  author = {L\"{o}sch, August},
+  title = {Bev\"{o}lkerungskrise?},
+  journal = {Deutscher Lebensraum: Bl\"{a}tter für neue deutsche Raum- und Bev\"{o}lkerungspolitik},
   year = {1933},
   volume = {1},
   number = {1},
@@ -214,16 +205,16 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 	<td>L&ouml;sch, A.</td>
 	<td>Umbruch der Bev&ouml;lkerungsentwcklung! <p class="infolinks">[<a href="javascript:toggleInfo('Loesch1933c','bibtex')">BibTeX</a>]</p></td>
 	<td>1933</td>
-	<td>Deutscher Lebensraum: Bl&auml;tter für neue deutsche Raum- und Bev&ouml;lkerungspolitik<br/>Vol. 1(1), pp. 53f.&nbsp;</td>
+	<td><i >Deutscher Lebensraum: Bl&auml;tter für neue deutsche Raum- und Bev&ouml;lkerungspolitik</i><br/>Vol. 1(1), pp. 53f.</td>
 	<td>article</td>
 </tr>
 <tr id="bib_Loesch1933c" class="bibtex noshow">
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1933c,
-  author = {L&ouml;sch, August},
-  title = {Umbruch der Bev&ouml;lkerungsentwcklung!},
-  journal = {Deutscher Lebensraum: Bl&auml;tter für neue deutsche Raum- und Bev&ouml;lkerungspolitik},
+  author = {L\"{o}sch, August},
+  title = {Umbruch der Bev\"{o}lkerungsentwcklung!},
+  journal = {Deutscher Lebensraum: Bl\"{a}tter für neue deutsche Raum- und Bev\"{o}lkerungspolitik},
   year = {1933},
   volume = {1},
   number = {1},
@@ -235,15 +226,15 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 	<td>L&ouml;sch, A.</td>
 	<td>Review of: Mombert, Karl. Bev&ouml;lkerungsentwicklung und Wirtschaftssteuerung. Leipzig 1932 <p class="infolinks">[<a href="javascript:toggleInfo('Loesch1933d','bibtex')">BibTeX</a>]</p></td>
 	<td>1933</td>
-	<td>Deutscher Lebensraum<br/>Vol. 1(1), pp. 96f.&nbsp;</td>
+	<td><i>Deutscher Lebensraum</i><br/>Vol. 1(1), pp. 96f.</td>
 	<td>article</td>
 </tr>
 <tr id="bib_Loesch1933d" class="bibtex noshow">
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1933d,
-  author = {L&ouml;sch, August},
-  title = {Review of: Mombert, Karl. Bev&ouml;lkerungsentwicklung und Wirtschaftssteuerung. Leipzig 1932},
+  author = {L\"{o}sch, August},
+  title = {Review of: Mombert, Karl. Bev\"{o}lkerungsentwicklung und Wirtschaftssteuerung. Leipzig 1932},
   journal = {Deutscher Lebensraum},
   year = {1933},
   volume = {1},
@@ -256,16 +247,16 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 	<td>L&ouml;sch, A.</td>
 	<td>Review of: Deutscher Lebensraum---Bl&auml;tter f&uuml;r Deutsche Raum- und Bev&ouml;lkerungspolitik <p class="infolinks">[<a href="javascript:toggleInfo('Loesch1933e','bibtex')">BibTeX</a>]</p></td>
 	<td>1933</td>
-	<td><i>Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche</i><br/>Vol. 57(4), pp. 157-159&nbsp;</td>
+	<td><i>Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche</i><br/>Vol. 57(4), pp. 157-159</td>
 	<td>article</td>
 </tr>
 <tr id="bib_Loesch1933e" class="bibtex noshow">
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1933e,
-  author = {L&ouml;sch, August},
-  title = {Review of: Deutscher Lebensraum---Bl&auml;tter f&uuml;r Deutsche Raum- und Bev&ouml;lkerungspolitik},
-  journal = {Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
+  author = {L\"{o}sch, August},
+  title = {Review of: Deutscher Lebensraum---Bl|"{a}tter f\"{u}r Deutsche Raum- und Bev\"{o}lkerungspolitik},
+  journal = {Schmollers Jahrbuch f\"{u}r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
   year = {1933},
   volume = {57},
   number = {4},
@@ -277,15 +268,15 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 	<td>L&ouml;sch, A.</td>
 	<td>Geburtenr&uuml;ckgang und Kapitalmarkt <p class="infolinks">[<a href="javascript:toggleInfo('Loesch1933f','bibtex')">BibTeX</a>]</p></td>
 	<td>1933</td>
-	<td>Der Deutsche Volkswirt<br/>Vol. 8(39), pp. 1112&nbsp;</td>
+	<td><i>Der Deutsche Volkswirt</i><br/>Vol. 8(39), p. 1112</td>
 	<td>article<br/><a href="/docs/schriften/33f_GeburtenrückgangKapitalmarkt_Lösch_DV33.pdf" target="_blank">download</a></td>
 </tr>
 <tr id="bib_Loesch1933f" class="bibtex noshow">
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1933f,
-  author = {L&ouml;sch, August},
-  title = {Geburtenr&uuml;ckgang und Kapitalmarkt},
+  author = {L\"{o}sch, August},
+  title = {Geburtenr\"{u}ckgang und Kapitalmarkt},
   journal = {Der Deutsche Volkswirt},
   year = {1933},
   volume = {8},
@@ -298,16 +289,16 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 	<td>L&ouml;sch, A.</td>
 	<td>Review of: M&uuml;hlner, Gotthold: Land ohne Kinder--Land ohne Zukunft! Wirtschaftskrisis und Geburtenr&uuml;ckgang. Berlin 1934 <p class="infolinks">[<a href="javascript:toggleInfo('Loesch1934','bibtex')">BibTeX</a>]</p></td>
 	<td>1934</td>
-	<td><i>Deutscher Lebensraum: Bl&auml;tter für neue deutsche Raum- und Bev&ouml;lkerungspolitik<i><br/>Vol. 2(3), pp. 20&nbsp;</td>
-	<td>article<br/><a href="/docs/schriften/34b_LandJugendZukunftMühlnerReview_Lösch_DL34.jpg" target="_blank"></a></td>
+	<td><i>Deutscher Lebensraum: Bl&auml;tter für neue deutsche Raum- und Bev&ouml;lkerungspolitik</i><br/>Vol. 2(3), pp. 20f.</td>
+	<td>article<br/><a href="/docs/schriften/34b_LandJugendZukunftMühlnerReview_Lösch_DL34.jpg" target="_blank">download</a></td>
 </tr>
 <tr id="bib_Loesch1934" class="bibtex noshow">
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1934,
-  author = {L&ouml;sch, August},
-  title = {Review of: M&uuml;hlner, Gotthold: Land ohne Kinder--Land ohne Zukunft! Wirtschaftskrisis und Geburtenr&uuml;ckgang. Berlin 1934},
-  journal = {Deutscher Lebensraum: Bl&auml;tter für neue deutsche Raum- und Bev&ouml;lkerungspolitik},
+  author = {L\"{o}sch, August},
+  title = {Review of: M\"{u}hlner, Gotthold: Land ohne Kinder--Land ohne Zukunft! Wirtschaftskrisis und Geburtenr&uuml;ckgang. Berlin 1934},
+  journal = {Deutscher Lebensraum: Bl\"{a}tter für neue deutsche Raum- und Bev\"{o}lkerungspolitik},
   year = {1934},
   volume = {2},
   number = {3},
@@ -319,19 +310,23 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 	<td>L&ouml;sch, A.</td>
 	<td>Technische Umw&auml;lzungen, internationale Standortverschiebungen und Protektionismus in der Nachkriegszeit <p class="infolinks">[<a href="javascript:toggleInfo('Loesch1934b','bibtex')">BibTeX</a>]</p></td>
 	<td>1934</td>
-	<td><br/>Vol. 4, pp. 107-116&nbsp;</td>
-	<td>inbook</td>
+	<td><i>Zwischenstaatliche Wirtschaft: Voraussetzungen und Formen Internationaler Wirtschaftsbeziehungen</i> (Ed. Herbert von Beckerath)<br/>Vol. 4, pp. 107-116. Berlin: Juncker und D&uuml;nnhaupt</td>
+	<td>chapter<br/><a href="/docs/schriften/34d_KostenStandortverschiebungenZollltendenzen_Lösch_ZW34.pdf" target="_blank">download</a></td>
 </tr>
 <tr id="bib_Loesch1934b" class="bibtex noshow">
 <td colspan="5"><b>BibTeX</b>:
 <pre>
-@inbook{Loesch1934b,
-  author = {L&ouml;sch, August},
-  title = {Technische Umw&auml;lzungen, internationale Standortverschiebungen und Protektionismus in der Nachkriegszeit},
-  publisher = {Junker und D&uuml;nnhaupt},
-  year = {1934},
-  volume = {4},
-  pages = {107--116}
+@InBook{Loesch1934b,
+  chapter   = {Selbstkosten- und Standortverschiebungen von Genu{\ss}g\"{u}tern nach dem Krieg als Ursachen von Zolltendenzen},
+  pages     = {107--116},
+  title     = {Technische Umw\"{a}lzungen, internationale Standortverschiebungen und Protektionismus in der Nachkriegszeit},
+  publisher = {Junker und D\"{u}nnhaupt},
+  year      = {1934},
+  author    = {L\"{o}sch, August},
+  editor    = {von Beckerath, Herbert},
+  volume    = {4},
+  series    = {Zwischenstaatliche Wirtschaft: Voraussetzungen und Formen Internationaler Wirtschaftsbeziehungen},
+  address   = {Berlin}  
 }
 </pre></td>
 </tr>
@@ -346,9 +341,9 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1934c,
-  author = {L&ouml;sch, August},
-  title = {Die Bev&ouml;lkerungsbilanz des Krieges},
-  journal = {Deutscher Lebensraum: Bl&auml;tter für neue deutsche Raum- und Bev&ouml;lkerungspolitik},
+  author = {L\"{o}sch, August},
+  title = {Die Bev\"{o}lkerungsbilanz des Krieges},
+  journal = {Deutscher Lebensraum: Bl\"{a}tter f\"{u}r neue deutsche Raum- und Bev\"{o}lkerungspolitik},
   year = {1934},
   volume = {2},
   number = {3},
@@ -367,7 +362,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1934d,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Besprechung von: Huber, Michel, La population de la France pendant la guerre. Paris 1931},
   journal = {Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
   year = {1934},
@@ -382,13 +377,13 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 	<td>Spiethoff's Theory of Business Cycles <p class="infolinks">[<a href="javascript:toggleInfo('Loesch1935','bibtex')">BibTeX</a>]</p></td>
 	<td>1935</td>
 	<td><i>School</i>: Cowles Commission for Research in Economics&nbsp;</td>
-	<td>techreport</td>
+	<td>mimeo</td>
 </tr>
 <tr id="bib_Loesch1935" class="bibtex noshow">
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @techreport{Loesch1935,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Spiethoff's Theory of Business Cycles},
   school = {Cowles Commission for Research in Economics},
   year = {1935}
@@ -406,7 +401,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @book{Loesch1936,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Bev&ouml;lkerungswellen und Wechsellagen im Deutschen Reich von 1871 bis 1910},
   publisher = {Gustav Fischer},
   series    = {Beitr\"{a}ge zur Erforschung der wirtschaftlichen Wechsellagen Aufschwung, Krise, Stockung},
@@ -427,7 +422,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1936a,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Die Vergreisung---wirtschaftlich gesehen},
   journal = {Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
   year = {1936},
@@ -448,7 +443,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1936b,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Wirtschaftsschwankungen als Folge von Bev&ouml;lkerungswellen},
   journal = {Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
   year = {1936},
@@ -469,7 +464,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1936c,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Besprechung von: Richard Riedl, Aussenhandel und W&auml;hrungsschutz. Berlin Wien Z&uuml;rich 1936},
   journal = {Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
   year = {1936},
@@ -489,7 +484,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1936d,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Besprechung von: Roehricht, Fritz. Die Theorie des internationalen Handels als methodologisches Problem. Bleicherode (Harz) 1934},
   journal = {Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
   year = {1936},
@@ -510,7 +505,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1936e,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Besprechung von: Winkler, Wilhelm. Der Geburtenr&uuml;ckgang in &Ouml;sterreich. Wien u. Leipzig 1935},
   journal = {Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
   year = {1936},
@@ -530,7 +525,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1936f,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Bev&ouml;lkerungswellen},
   journal = {Die Hilfe---Zeitschrift f&uuml;r Politik, Wirtschaft und geistige Bewegung, Begr&uuml;nder: Friedrich Naumann},
   year = {1936},
@@ -551,7 +546,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1936g,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Bev&ouml;lkerungswellen---Konjunkturursache},
   journal = {Geistige Arbeit: Zeitung aus der wissenschaftlichen Welt},
   year = {1936},
@@ -572,7 +567,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1937,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Population Cycles as a Cause of Business Cycles},
   journal = {Quarterly Journal of Economics},
   year = {1937},
@@ -593,7 +588,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1937a,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Noch einmal: Bev&ouml;lkerungswellen und Wechsellagen. Erwiderung an Professor Johan &Aring;kerman},
   journal = {Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
   year = {1937},
@@ -614,7 +609,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @unpublished{Loesch1937b,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Spiethoff's Theory of Business Cycle},
   year = {1937},
   note = {Unpublished Mimeograph}
@@ -632,7 +627,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1937c,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Besprechung von: Haufe, Helmut. Die Bev&ouml;lkerung Europas---Stadt und Land im 19. und 20. Jahrhundert. Berlin 1936},
   journal = {Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
   year = {1937},
@@ -653,7 +648,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1937d,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Besprechung von: Besprechung von: Burgd&ouml;rfer, Friedrich. Volks- und Wehrkraft, Krieg und Rasse. Berlin 1936},
   journal = {Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
   year = {1937},
@@ -674,7 +669,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1937e,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Ein Vergleich der Ahnen Goethes und Adolf Hitlers},
   journal = {W&uuml;rttembergische Schulwarte: Mitteilungen d. W&uuml;rttembergischen Landesanstalt f&uuml;r Erziehung u. Unterricht},
   year = {1937},
@@ -694,7 +689,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1937f,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Wie liest man eine Ahnentafel?},
   journal = {W&uuml;rttembergische Schulwarte: Mitteilungen d. W&uuml;rttembergischen Landesanstalt f&uuml;r Erziehung u. Unterricht},
   year = {1937},
@@ -715,7 +710,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1938,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Wo gilt das Theorem der komparativen Kosten?},
   journal = {Weltwirtschaftliches Archiv},
   year = {1938},
@@ -735,7 +730,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1938a,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Beitr&auml;ge zur Standorttheorie},
   journal = {Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
   year = {1938},
@@ -759,7 +754,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1938b,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Das Problem einer Wechselwirkung zwischen Bev&ouml;lkerungs- und Wirtschaftsentwicklung},
   journal = {Weltwirtschaftliches Archiv},
   year = {1938},
@@ -779,7 +774,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1938c,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {The Nature of Economic Regions},
   journal = {Southern Economic Journal},
   year = {1938},
@@ -800,7 +795,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @incollection{Loesch1938d,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Die Bedeutung der Bev&ouml;lkerungsbewegung f&uuml;r das Wirtschaftsleben},
   booktitle = {Congr&eacute;s international de la population, Paris 1937},
   publisher = {Hermann, et Cie., &Eacute;diteurs},
@@ -842,7 +837,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1939,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Eine neue Theorie des internationalen Handels},
   journal = {Weltwirtschaftliches Archiv},
   year = {1939},
@@ -862,7 +857,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1939a,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Review: Neuerscheinungen &uuml;ber Bev&ouml;lkerungsfragen},
   journal = {Weltwirtschaftliches Archiv},
   year = {1939},
@@ -882,7 +877,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1939b,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Besprechung von: Ungern-Sternberg, Roderich von. Bev&ouml;lkerungsverh&auml;ltnisse in Schweden, Norwegen und D&auml;nemark. Berlin 1936},
   journal = {Schmollers Jahrbuch f&uuml;r Gesetzgebung, Verwaltung und Volkswirtschaft im Deutschen Reiche},
   year = {1939},
@@ -902,7 +897,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @unpublished{Loesch1939c,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Ist Amerika wirklich so reich?},
   year = {1939},
   note = {Unpublished Mimeograph}
@@ -920,7 +915,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @book{Loesch1940,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Die r&auml;umliche Ordnung der Wirtschaft: Eine Untersuchung &uuml;ber Standort, Wirtschaftsgebiete und internationalen Handel},
   publisher = {Gustav Fischer},
   year = {1940},
@@ -939,7 +934,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1940a,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Verrechnung und Goldw&auml;hrung -- Ein Vergleich},
   journal = {Die Bank},
   year = {1940},
@@ -960,7 +955,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1940b,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Die englischen Zwangskredite},
   journal = {Die Bank},
   year = {1940},
@@ -981,7 +976,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1940c,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Geographie des Zinses},
   journal = {Die Bank},
   year = {1940},
@@ -1002,7 +997,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1940d,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Besprechung von: Decken, Hans v.d., Die englische Ern&auml;hrungslage im Frieden und im Kriege. Berlin 1940},
   journal = {Weltwirtschaftliches Archiv},
   year = {1940},
@@ -1023,7 +1018,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1940e,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Besprechung von: Wiedenfeld, Kurt. Die Raumbeziehungen im Wirtschaften der Welt. Die Grundformen des Wirtschaftslebens in der Gegenwart. Berlin 1939},
   journal = {Weltwirtschaftliches Archiv},
   year = {1940},
@@ -1044,7 +1039,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1940f,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Versch&auml;rfte Gegenblockade},
   journal = {Wirtschaftsdienst},
   year = {1940},
@@ -1084,7 +1079,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1941,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Die Lehre vom Transfer -- neu gefa&szlig;t},
   journal = {Jahrb&uuml;cher f&uuml;r National&ouml;konomie und Statistik},
   year = {1941},
@@ -1105,7 +1100,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @inbook{Loesch1941a,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Nauticus: Jahrbuch f&uuml;r Deutschlands Seeinteressen},
   journal = {Nauticus: Jahrbuch für Deutschlands Seeinteressen},
   publisher = {E. S. Mittler &amp; Sohn Verlag},
@@ -1126,7 +1121,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1941c,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Die neuen Methoden der englischen Handelspolitik. Bericht aus dem Institut f&uuml;r Weltwirtschaft (unter Mitarbeit von Dr. G. Lenschow, Dr. H. L&ouml;fke, Dr. H. Meinhold, Dr. L. M&uuml;lhaupt und Dipl. sc. pol. H. Langeloh)},
   journal = {Weltwirtschaftliches Archiv},
   year = {1941},
@@ -1146,7 +1141,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1941d,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Neues Wirtschaftsdenken in England},
   journal = {Frankfurter Zeitung und Handelsblatt},
   year = {1941},
@@ -1167,7 +1162,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1941f,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Um eine neue Standorttheorie. Eine Auseinandersetzung mit Ritschl},
   journal = {Weltwirtschaftliches Archiv},
   year = {1941},
@@ -1188,7 +1183,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @techreport{Loesch1942,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Zur Beurteilung des west-&ouml;stlichen Preisgef&auml;lles},
   school = {Institut f&uuml;r Weltwirtschaft},
   year = {1942}
@@ -1206,7 +1201,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1942a,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Besprechung von: Neesen, Friedrich. Gestaltung und Wirtschaftlichkeit der Land-, Wasser und Luftfahrzeuge. Buch 1: Der Einflu&szlig; der Geschwindigkeit auf die Gestaltung und Wirtschaftlichkeit der Land-, Wasserund Luftfahrzeuge. Jena 1940},
   journal = {Weltwirtschaftliches Archiv},
   year = {1942},
@@ -1227,7 +1222,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1942b,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Besprechung von: Bolza, Hans. Grundri&szlig; einer systematischen Wirtschaftslehre. Stuttgart u. Berlin 1941},
   journal = {Weltwirtschaftliches Archiv},
   year = {1943},
@@ -1248,7 +1243,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @unpublished{Loesch1942c,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {&Uuml;ber die Existenzberechtigung wirtschaftswissenschaftlicher Institute},
   year = {1942},
   note = {NL Walter Eucken; Kasten: Wissenschafts- und Universit&auml;tspolitik 1933-1945}
@@ -1266,7 +1261,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @techreport{Loesch1942d,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Was h&auml;lt einen wissenschaftlichen Kopf von der akademischen Laufbahn ab?},
   school = {Institut f&uuml;r Weltwirtschaft an der Universit&auml;t Kiel},
   year = {1942}
@@ -1284,7 +1279,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1943,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Um eine neue Transfertheorie: Zur Verteidigung der alten Lehre durch Fritz Meyer},
   journal = {Jahrb&uuml;cher f&uuml;r National&ouml;konomie und Statistik},
   year = {1943},
@@ -1305,7 +1300,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @unpublished{Loesch1943a,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Bemerkungen zum Währungsplan vom Keynes},
   year = {1943},
   note = {An Per Jacobbsen, 13. Jahrestagung der BIZ}
@@ -1323,7 +1318,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1943b,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Besprechung von: Burgd&ouml;rfer, Friedrich. Krieg und Bev&ouml;lkerungsentwicklung. M&uuml;nchen u. Berlin 1940},
   journal = {Weltwirtschaftliches Archiv},
   year = {1943},
@@ -1344,7 +1339,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @book{Loesch1944,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Die r&auml;umliche Ordnung der Wirtschaft},
   publisher = {Gustav Fischer},
   year = {1944},
@@ -1363,7 +1358,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @unpublished{Loesch1944a,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Geographie der Preise},
   year = {1944},
   note = {NL Walter Eucken; Kasten: 5}
@@ -1381,7 +1376,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1945,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Besprechung von: Hesse, Paul (Hrsg.). Landvolk und Landwirtschaft in den Gemeinden von W&uuml;rttemberg-Hohenzollern. Grundlagen zur Raumordnung, Erzeugungsschlacht und Wirtschaftsberatung. Stuttgart 1939},
   journal = {Weltwirtschaftliches Archiv},
   year = {1945},
@@ -1402,7 +1397,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @article{Loesch1949,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Theorie der W&auml;hrung: Ein Fragment},
   journal = {Weltwirtschaftliches Archiv},
   year = {1949},
@@ -1422,7 +1417,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @book{Loesch1954,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {The Economics of Location},
   publisher = {Yale University Press},
   year = {1954},
@@ -1441,7 +1436,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @incollection{Loesch1956,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {A New Theory of International Trade},
   booktitle = {International Economic Papers},
   journal = {International Economic Papers},
@@ -1463,7 +1458,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 <td colspan="5"><b>BibTeX</b>:
 <pre>
 @unpublished{Loeschn.d.,
-  author = {L&ouml;sch, August},
+  author = {L\"{o}sch, August},
   title = {Wesen und Nutzen wirtschaftlicher Gro&szlig;r&auml;ume},
   year = {n.d.},
   note = {NL Walter Eucken; Kasten: Wissenschafts- und Universit&auml;tspolitik 1933-1945}
