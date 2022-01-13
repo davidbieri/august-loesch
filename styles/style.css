@@ -103,6 +103,35 @@ h1 {
   padding-top: 60px;
 }
 
+main {
+  padding-bottom: 140px;
+}
+
+
+footer.fixed-bottom{
+  background-color:#333;
+  color: #f2f2f2;
+  font-size:0.75rem;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+  
+footer.fixed-bottom .container{
+  color:#333;
+  padding-top:12px;
+  padding-bottom:11px;
+  
+}
+  
+footer.fixed-bottom a{
+  color:var(--global-footer-link-color)
+}
+  
+
+
 
 @charset "UTF-8";@font-face {
   font-family: "Steelfish";
