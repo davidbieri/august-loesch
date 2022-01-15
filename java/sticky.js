@@ -12,3 +12,7 @@ function myFunction() {
   }
 }
 
+var navHeight = document.getElementById("navbar").offsetHeight,
+	page = document.getElementById('page');
+
+page.style.paddingTop = navHeight + 'px';
