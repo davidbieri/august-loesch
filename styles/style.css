@@ -64,7 +64,7 @@ h1 {
   text-decoration: none;
 }
 
-#navbar a:hover {
+#navbar a:hover, .dropdown:hover .dropbtn {
   font-weight: 700;
   background-color: #ddd;
   color: black;
@@ -92,11 +92,6 @@ h1 {
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0; /* Important for vertical align on mobile phones */
-}
-
-/* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
 }
 
 /* Dropdown content (hidden by default) */
