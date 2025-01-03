@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-
+// components/ModernNavigation.js
 const ModernNavigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   return (
     <nav className="bg-white shadow-md">
@@ -43,7 +41,15 @@ const ModernNavigation = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100 transition-colors"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? 
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                : 
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              }
             </button>
           </div>
         </div>
@@ -64,4 +70,6 @@ const ModernNavigation = () => {
     </nav>
   );
 };
+
+window.ModernNavigation = ModernNavigation;
 
