@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-import { Copy, Check } from 'lucide-react';
-
+// components/CitationGenerator.js
 const CitationGenerator = ({ document }) => {
-  const [citationFormat, setCitationFormat] = useState('apa');
-  const [copied, setCopied] = useState(false);
+  const [citationFormat, setCitationFormat] = React.useState('apa');
+  const [copied, setCopied] = React.useState(false);
 
   const generateCitation = (format) => {
     const currentYear = new Date().getFullYear();
@@ -63,9 +61,14 @@ const CitationGenerator = ({ document }) => {
                      hover:bg-gray-200 transition-colors duration-200"
         >
           {copied ? (
-            <Check size={16} className="text-green-500" />
+            <svg className="w-4 h-4 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
           ) : (
-            <Copy size={16} className="text-gray-500" />
+            <svg className="w-4 h-4 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
           )}
         </button>
       </div>
@@ -78,4 +81,4 @@ const CitationGenerator = ({ document }) => {
   );
 };
 
-export default CitationGenerator;
+window.CitationGenerator = CitationGenerator;
