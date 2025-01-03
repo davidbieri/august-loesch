@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-import { Search, Filter, Calendar, File } from 'lucide-react';
-
+// components/ArchiveSearch.js
 const ArchiveSearch = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [searchQuery, setSearchQuery] = React.useState('');
+  const [activeFilter, setActiveFilter] = React.useState('all');
 
   // Mock search results for demonstration
   const searchResults = [
@@ -36,11 +34,21 @@ const ArchiveSearch = () => {
                      focus:ring-2 focus:ring-blue-500 focus:border-transparent
                      transition-all duration-200"
         />
-        <Search 
-          size={20} 
+        <svg 
           className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400
-                     group-hover:text-gray-600 transition-colors duration-200" 
-        />
+                     group-hover:text-gray-600 transition-colors duration-200"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
       </div>
 
       {/* Filter tabs with animation */}
@@ -70,9 +78,17 @@ const ArchiveSearch = () => {
           >
             <div className="flex items-center mb-2">
               {result.type === 'document' ? (
-                <File size={16} className="text-blue-500 mr-2" />
+                <svg className="w-4 h-4 text-blue-500 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
               ) : (
-                <Calendar size={16} className="text-green-500 mr-2" />
+                <svg className="w-4 h-4 text-green-500 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
               )}
               <span className="text-sm text-gray-500">{result.category}</span>
             </div>
@@ -85,4 +101,4 @@ const ArchiveSearch = () => {
   );
 };
 
-export default ArchiveSearch;
+window.ArchiveSearch = ArchiveSearch;
