@@ -23,9 +23,10 @@
 
     <link rel="icon" href="/images/al.png">
 
-    <!-- React and Components -->
-    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <!-- React and Dependencies -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 
 <body class="bg-gray-50">
@@ -92,44 +93,48 @@
     </main>
 
     <!-- Component Initialization -->
-    <script type="module">
-        import { ModernNavigation } from './components/ModernNavigation.js';
-        import { AnimatedHeader } from './components/AnimatedHeader.js';
-        import { ArchiveSearch } from './components/ArchiveSearch.js';
-        import { ImageGallery } from './components/ImageGallery.js';
-        import { CitationGenerator } from './components/CitationGenerator.js';
+    <script type="text/babel">
+        // Wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', () => {
+            // Modern Navigation
+            const navigationRoot = document.getElementById('navigation-root');
+            if (navigationRoot) {
+                ReactDOM.render(<ModernNavigation />, navigationRoot);
+            }
 
-        // Mount components
-        ReactDOM.render(
-            React.createElement(ModernNavigation),
-            document.getElementById('navigation-root')
-        );
+            // Animated Header with Breadcrumbs
+            const headerRoot = document.getElementById('header-root');
+            if (headerRoot) {
+                ReactDOM.render(<AnimatedHeader />, headerRoot);
+            }
 
-        ReactDOM.render(
-            React.createElement(AnimatedHeader),
-            document.getElementById('header-root')
-        );
+            // Archive Search
+            const searchRoot = document.getElementById('search-root');
+            if (searchRoot) {
+                ReactDOM.render(<ArchiveSearch />, searchRoot);
+            }
 
-        ReactDOM.render(
-            React.createElement(ArchiveSearch),
-            document.getElementById('search-root')
-        );
+            // Image Gallery
+            const galleryRoot = document.getElementById('gallery-root');
+            if (galleryRoot) {
+                ReactDOM.render(<ImageGallery />, galleryRoot);
+            }
 
-        ReactDOM.render(
-            React.createElement(ImageGallery),
-            document.getElementById('gallery-root')
-        );
-
-        ReactDOM.render(
-            React.createElement(CitationGenerator, {
-                document: {
-                    id: 'example-doc',
-                    title: 'The Economics of Location',
-                    year: 1940
-                }
-            }),
-            document.getElementById('citation-root')
-        );
+            // Citation Generator
+            const citationRoot = document.getElementById('citation-root');
+            if (citationRoot) {
+                ReactDOM.render(
+                    <CitationGenerator 
+                        document={{
+                            id: 'example-doc',
+                            title: 'The Economics of Location',
+                            year: 1940
+                        }}
+                    />, 
+                    citationRoot
+                );
+            }
+        });
     </script>
 
     <!-- Footer -->
