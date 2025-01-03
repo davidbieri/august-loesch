@@ -1,3 +1,6 @@
+// Template for all component files
+/* global React, ReactDOM */
+
 // components/AnimatedHeader.js
 const AnimatedHeader = () => {
     return (
