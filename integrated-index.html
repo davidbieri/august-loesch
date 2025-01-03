@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Online archive for August Lösch (1906-1945), German economist and spatial theorist---Collected papers and correspondence" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow" />
+    <title>August Lösch | Archive</title>
+
+    <!-- Fonts and Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+
+    <link rel="icon" href="/images/al.png">
+
+    <!-- React and Components -->
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Modern Navigation -->
+    <div id="navigation-root"></div>
+
+    <!-- Animated Header with Breadcrumbs -->
+    <div id="header-root"></div>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Archive Search -->
+        <div id="search-root" class="mb-12"></div>
+
+        <!-- Main Content -->
+        <div class="prose max-w-none">
+            <p class="text-lg">
+                This project aims to create a consolidated, comprehensive online archive of the collected papers 
+                of the German economist and spatial theorist <strong>Karl Wilhelm August Lösch</strong> (1906-1945), 
+                among whose most influential teachers and life-long mentors were the great German economists 
+                Walter Eucken (1891-1950), Joseph Schumpeter (1883-1950), and Arthur Spiethoff (1873-1957).
+            </p>
+
+            <p class="text-lg">
+                Key features of the online archive include 
+                <a href="/docs/lösch-archive_v0.pdf" class="text-blue-600 hover:text-blue-800">digitized manuscripts</a> 
+                (including hitherto unpublished works), collected papers as well as transcribed 
+                <a href="/docs/lösch-letters_v0.pdf" class="text-blue-600 hover:text-blue-800">letters</a> 
+                and other correspondence.
+            </p>
+        </div>
+
+        <!-- Modern Image Gallery -->
+        <div id="gallery-root" class="my-12"></div>
+
+        <!-- Citation Generator -->
+        <div id="citation-root" class="mt-12"></div>
+
+        <!-- Contact Section -->
+        <footer class="mt-16 border-t pt-8">
+            <div class="text-gray-600">
+                <p id="contact" class="mb-4">
+                    For more information, contact: 
+                    <a href="http://www.david-bieri.com" class="text-blue-600 hover:text-blue-800">Dr. David Bieri</a>
+                    <a href="mailto:bieri@vt.edu" class="ml-2 text-gray-400 hover:text-gray-600">
+                        <i class="fa fa-envelope fa-lg"></i>
+                    </a>
+                    <a href="http://www.twitter.com/space_economy" class="ml-2 text-gray-400 hover:text-gray-600">
+                        <i class="fa fa-twitter fa-lg"></i>
+                    </a>
+                </p>
+                <p class="text-sm">
+                    Financial support for the <em>August Lösch Archive</em> from the 
+                    <a href="http://historyofeconomics.org/" class="text-blue-600 hover:text-blue-800">
+                        History of Economics Society
+                    </a> 
+                    and from the Virginia Tech 
+                    <a href="https://ppe.liberalarts.vt.edu/" class="text-blue-600 hover:text-blue-800">
+                        Kellogg Center for Philosophy, Politics, & Economics
+                    </a> 
+                    is gratefully acknowledged.
+                </p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Component Initialization -->
+    <script type="module">
+        import { ModernNavigation } from './components/ModernNavigation.js';
+        import { AnimatedHeader } from './components/AnimatedHeader.js';
+        import { ArchiveSearch } from './components/ArchiveSearch.js';
+        import { ImageGallery } from './components/ImageGallery.js';
+        import { CitationGenerator } from './components/CitationGenerator.js';
+
+        // Mount components
+        ReactDOM.render(
+            React.createElement(ModernNavigation),
+            document.getElementById('navigation-root')
+        );
+
+        ReactDOM.render(
+            React.createElement(AnimatedHeader),
+            document.getElementById('header-root')
+        );
+
+        ReactDOM.render(
+            React.createElement(ArchiveSearch),
+            document.getElementById('search-root')
+        );
+
+        ReactDOM.render(
+            React.createElement(ImageGallery),
+            document.getElementById('gallery-root')
+        );
+
+        ReactDOM.render(
+            React.createElement(CitationGenerator, {
+                document: {
+                    id: 'example-doc',
+                    title: 'The Economics of Location',
+                    year: 1940
+                }
+            }),
+            document.getElementById('citation-root')
+        );
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4 text-center">
+        <p class="text-sm">© 2025. David Bieri, August-Lösch Archive.</p>
+    </footer>
+</body>
+</html>
