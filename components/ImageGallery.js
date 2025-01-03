@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-
+// components/ImageGallery.js
 const ImageGallery = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [showLightbox, setShowLightbox] = useState(false);
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [showLightbox, setShowLightbox] = React.useState(false);
 
   const images = [
     {
@@ -13,8 +11,11 @@ const ImageGallery = () => {
     {
       src: "/api/placeholder/800/600",
       caption: "Material from the \"Nachlass Lösch\" in the Stadtarchiv, Heidenheim"
+    },
+    {
+      src: "/api/placeholder/800/600",
+      caption: "August Lösch (ca. 1936)"
     }
-    // Add other images similarly
   ];
 
   const nextSlide = () => {
@@ -36,18 +37,31 @@ const ImageGallery = () => {
           loading="lazy"
         />
         
+        {/* Navigation Buttons */}
         <button
-          onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white transition-colors"
+          onClick={(e) => {
+            e.stopPropagation();
+            prevSlide();
+          }}
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full 
+                     hover:bg-white transition-colors"
         >
-          <ChevronLeft size={24} />
+          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
         </button>
         
         <button
-          onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white transition-colors"
+          onClick={(e) => {
+            e.stopPropagation();
+            nextSlide();
+          }}
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full 
+                     hover:bg-white transition-colors"
         >
-          <ChevronRight size={24} />
+          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
         </button>
         
         <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
@@ -55,6 +69,7 @@ const ImageGallery = () => {
         </div>
       </div>
 
+      {/* Thumbnail Navigation */}
       <div className="flex justify-center mt-4 gap-2">
         {images.map((_, index) => (
           <button
@@ -67,9 +82,12 @@ const ImageGallery = () => {
         ))}
       </div>
 
+      {/* Lightbox */}
       {showLightbox && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center"
-             onClick={() => setShowLightbox(false)}>
+        <div 
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center"
+          onClick={() => setShowLightbox(false)}
+        >
           <img
             src={images[currentSlide].src}
             alt={images[currentSlide].caption}
@@ -81,4 +99,4 @@ const ImageGallery = () => {
   );
 };
 
-export default ImageGallery;
+window.ImageGallery = ImageGallery;
