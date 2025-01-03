@@ -101,54 +101,73 @@
         </footer>
     </main>
 
-    <!-- Component Initialization -->
-    <script type="text/babel">
-        // Wait for DOM to be ready
-        document.addEventListener('DOMContentLoaded', () => {
-            // Modern Navigation
-            const navigationRoot = document.getElementById('navigation-root');
-            if (navigationRoot) {
-                ReactDOM.render(<ModernNavigation />, navigationRoot);
-            }
-
-            // Animated Header with Breadcrumbs
-            const headerRoot = document.getElementById('header-root');
-            if (headerRoot) {
-                ReactDOM.render(<AnimatedHeader />, headerRoot);
-            }
-
-            // Archive Search
-            const searchRoot = document.getElementById('search-root');
-            if (searchRoot) {
-                ReactDOM.render(<ArchiveSearch />, searchRoot);
-            }
-
-            // Image Gallery
-            const galleryRoot = document.getElementById('gallery-root');
-            if (galleryRoot) {
-                ReactDOM.render(<ImageGallery />, galleryRoot);
-            }
-
-            // Citation Generator
-            const citationRoot = document.getElementById('citation-root');
-            if (citationRoot) {
-                ReactDOM.render(
-                    <CitationGenerator 
-                        document={{
-                            id: 'example-doc',
-                            title: 'The Economics of Location',
-                            year: 1940
-                        }}
-                    />, 
-                    citationRoot
-                );
-            }
-        });
-    </script>
-
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-4 text-center">
         <p class="text-sm">© 2025. David Bieri, August-Lösch Archive.</p>
     </footer>
+
+    <!-- At the end of the body, before closing body tag -->
+    <script type="text/babel">
+        // Wait for all components to be loaded
+        window.addEventListener('load', () => {
+            // For debugging
+            console.log('Checking if components are loaded:', {
+                ModernNavigation: window.ModernNavigation,
+                AnimatedHeader: window.AnimatedHeader,
+                ArchiveSearch: window.ArchiveSearch,
+                ImageGallery: window.ImageGallery,
+                CitationGenerator: window.CitationGenerator
+            });
+
+            // Mount ModernNavigation
+            const navRoot = document.getElementById('navigation-root');
+            if (navRoot && window.ModernNavigation) {
+                ReactDOM.render(React.createElement(window.ModernNavigation), navRoot);
+            } else {
+                console.error('Navigation mount failed:', {navRoot, ModernNavigation: window.ModernNavigation});
+            }
+
+            // Mount AnimatedHeader
+            const headerRoot = document.getElementById('header-root');
+            if (headerRoot && window.AnimatedHeader) {
+                ReactDOM.render(React.createElement(window.AnimatedHeader), headerRoot);
+            } else {
+                console.error('Header mount failed:', {headerRoot, AnimatedHeader: window.AnimatedHeader});
+            }
+
+            // Mount ArchiveSearch
+            const searchRoot = document.getElementById('search-root');
+            if (searchRoot && window.ArchiveSearch) {
+                ReactDOM.render(React.createElement(window.ArchiveSearch), searchRoot);
+            } else {
+                console.error('Search mount failed:', {searchRoot, ArchiveSearch: window.ArchiveSearch});
+            }
+
+            // Mount ImageGallery
+            const galleryRoot = document.getElementById('gallery-root');
+            if (galleryRoot && window.ImageGallery) {
+                ReactDOM.render(React.createElement(window.ImageGallery), galleryRoot);
+            } else {
+                console.error('Gallery mount failed:', {galleryRoot, ImageGallery: window.ImageGallery});
+            }
+
+            // Mount CitationGenerator
+            const citationRoot = document.getElementById('citation-root');
+            if (citationRoot && window.CitationGenerator) {
+                ReactDOM.render(
+                    React.createElement(window.CitationGenerator, {
+                        document: {
+                            id: 'example-doc',
+                            title: 'The Economics of Location',
+                            year: 1940
+                        }
+                    }),
+                    citationRoot
+                );
+            } else {
+                console.error('Citation mount failed:', {citationRoot, CitationGenerator: window.CitationGenerator});
+            }
+        });
+    </script>
 </body>
 </html>
