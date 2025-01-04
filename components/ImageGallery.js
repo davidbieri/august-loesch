@@ -8,7 +8,7 @@ const ImageGallery = () => {
 
   const images = [
     {
-      src: "/api/placeholder/800/600",
+      src: "images/2829WS_HeideggerTodtnauberg_large.JPG",
       caption: "At Heidegger's chalet on Todtnauberg in the Black Forest, Winter 1929"
     },
     {
