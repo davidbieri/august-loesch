@@ -1,3 +1,6 @@
+// Template for all component files
+/* global React, ReactDOM */
+
 // components/ModernNavigation.js
 const ModernNavigation = () => {
   const [isOpen, setIsOpen] = React.useState(false);
