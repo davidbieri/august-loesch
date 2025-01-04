@@ -1,3 +1,6 @@
+// Template for all component files
+/* global React, ReactDOM */
+
 // components/ArchiveSearch.js
 const ArchiveSearch = () => {
   const [searchQuery, setSearchQuery] = React.useState('');
