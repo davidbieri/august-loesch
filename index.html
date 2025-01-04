@@ -36,6 +36,36 @@
     <script type="text/babel" src="components/ArchiveSearch.js"></script>
     <script type="text/babel" src="components/ImageGallery.js"></script>
     <script type="text/babel" src="components/CitationGenerator.js"></script>
+
+    // Add this temporarily to verify everything is working
+<script type="text/babel">
+    function checkDependencies() {
+        console.log('Checking dependencies...');
+        
+        // Check React
+        console.log('React loaded:', typeof React !== 'undefined');
+        
+        // Check ReactDOM
+        console.log('ReactDOM loaded:', typeof ReactDOM !== 'undefined');
+        
+        // Check Components
+        console.log('ModernNavigation loaded:', typeof window.ModernNavigation !== 'undefined');
+        console.log('AnimatedHeader loaded:', typeof window.AnimatedHeader !== 'undefined');
+        console.log('ArchiveSearch loaded:', typeof window.ArchiveSearch !== 'undefined');
+        console.log('ImageGallery loaded:', typeof window.ImageGallery !== 'undefined');
+        console.log('CitationGenerator loaded:', typeof window.CitationGenerator !== 'undefined');
+        
+        // Check mounting points
+        console.log('Navigation root exists:', !!document.getElementById('navigation-root'));
+        console.log('Header root exists:', !!document.getElementById('header-root'));
+        console.log('Search root exists:', !!document.getElementById('search-root'));
+        console.log('Gallery root exists:', !!document.getElementById('gallery-root'));
+        console.log('Citation root exists:', !!document.getElementById('citation-root'));
+    }
+
+    // Run check when page loads
+    window.addEventListener('load', checkDependencies);
+</script>
     
 </head>
 
