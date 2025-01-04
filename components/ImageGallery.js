@@ -1,3 +1,6 @@
+// Template for all component files
+/* global React, ReactDOM */
+
 // components/ImageGallery.js
 const ImageGallery = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
