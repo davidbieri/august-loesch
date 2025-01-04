@@ -1,7 +1,6 @@
-// Template for all component files
-/* global React, ReactDOM */
-
 // components/ModernNavigation.js
+/* global React */
+
 const ModernNavigation = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -11,7 +10,7 @@ const ModernNavigation = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <img 
-              src="/api/placeholder/175/50" 
+              src="images/AugustLösch_Unterschrift_dick.jpeg"
               alt="August Lösch Signature" 
               className="h-8"
             />
@@ -44,15 +43,15 @@ const ModernNavigation = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100 transition-colors"
             >
-              {isOpen ? 
+              {isOpen ? (
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
-                : 
+              ) : (
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
-              }
+              )}
             </button>
           </div>
         </div>
@@ -75,4 +74,3 @@ const ModernNavigation = () => {
 };
 
 window.ModernNavigation = ModernNavigation;
-
