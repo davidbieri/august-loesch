@@ -1,7 +1,6 @@
-// Template for all component files
-/* global React, ReactDOM */
-
 // components/ImageGallery.js
+/* global React */
+
 const ImageGallery = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [showLightbox, setShowLightbox] = React.useState(false);
@@ -12,20 +11,30 @@ const ImageGallery = () => {
       caption: "At Heidegger's chalet on Todtnauberg in the Black Forest, Winter 1929"
     },
     {
-      src: "/api/placeholder/800/600",
+      src: "images/Schriften_Heidenheim.jpg",
       caption: "Material from the \"Nachlass Lösch\" in the Stadtarchiv, Heidenheim"
     },
     {
-      src: "/api/placeholder/800/600",
+      src: "images/LöschPortrait_Heidenheim.jpg",
       caption: "August Lösch (ca. 1936)"
+    },
+    {
+      src: "images/30SS_KeynesOhlin_SchumpeterSeminar.jpg",
+      caption: "Lösch's formative encounter with the Keynes-Ohlin debate"
+    },
+    {
+      src: "images/31SS_Gruppe_SchumpeterSeminar.jpg",
+      caption: "Group photo of the Schumpeter Seminar (Bonn, SS 1931)"
     }
   ];
 
-  const nextSlide = () => {
+  const nextSlide = (e) => {
+    e.stopPropagation();
     setCurrentSlide((prev) => (prev + 1) % images.length);
   };
 
-  const prevSlide = () => {
+  const prevSlide = (e) => {
+    e.stopPropagation();
     setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
   };
 
@@ -42,10 +51,7 @@ const ImageGallery = () => {
         
         {/* Navigation Buttons */}
         <button
-          onClick={(e) => {
-            e.stopPropagation();
-            prevSlide();
-          }}
+          onClick={prevSlide}
           className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full 
                      hover:bg-white transition-colors"
         >
@@ -55,10 +61,7 @@ const ImageGallery = () => {
         </button>
         
         <button
-          onClick={(e) => {
-            e.stopPropagation();
-            nextSlide();
-          }}
+          onClick={nextSlide}
           className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full 
                      hover:bg-white transition-colors"
         >
