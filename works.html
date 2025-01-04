@@ -1489,6 +1489,244 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 </tr>
 </tbody>
 </table>
+
+	import React, { useState, useMemo } from 'react';
+
+const WorksTable = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [activeFilter, setActiveFilter] = useState('all');
+  const [showBibtex, setShowBibtex] = useState(null);
+  const [copied, setCopied] = useState(false);
+  const [sortConfig, setSortConfig] = useState({ key: 'year', direction: 'desc' });
+  const [yearRange, setYearRange] = useState({ start: 1930, end: 1945 });
+
+  // Add year range filter
+  const handleYearRangeChange = (type, value) => {
+    setYearRange(prev => ({
+      ...prev,
+      [type]: value
+    }));
+  };
+
+  // Sorting function
+  const sortData = (data) => {
+    return [...data].sort((a, b) => {
+      if (a[sortConfig.key] < b[sortConfig.key]) {
+        return sortConfig.direction === 'asc' ? -1 : 1;
+      }
+      if (a[sortConfig.key] > b[sortConfig.key]) {
+        return sortConfig.direction === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
+  };
+
+  // Filter and sort functionality
+  const filteredWorks = useMemo(() => {
+    return sortData(works.filter(work => {
+      const matchesFilter = activeFilter === 'all' || work.type === activeFilter;
+      const matchesSearch = work.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           work.author.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesYear = parseInt(work.year) >= yearRange.start && 
+                         parseInt(work.year) <= yearRange.end;
+      return matchesFilter && matchesSearch && matchesYear;
+    }));
+  }, [works, activeFilter, searchTerm, yearRange, sortConfig]);
+
+  // Export functions
+  const exportCSV = () => {
+    const csv = filteredWorks.map(work => 
+      `"${work.author}","${work.title}","${work.year}","${work.journal}","${work.type}"`
+    ).join('\n');
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'losch-works.csv';
+    a.click();
+  };
+
+  const exportBibTeX = () => {
+    const bibtex = filteredWorks.map(work => work.bibtex).join('\n\n');
+    const blob = new Blob([bibtex], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'losch-works.bib';
+    a.click();
+  };
+
+  return (
+    <div className="bg-white rounded-lg shadow">
+      {/* Controls Section */}
+      <div className="p-4 border-b border-gray-200 space-y-4">
+        {/* Search and Export */}
+        <div className="flex flex-wrap gap-4 items-center justify-between">
+          <div className="relative flex-grow max-w-xl">
+            <input
+              type="text"
+              placeholder="Search by title, author..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full p-2 pl-10 rounded-md border border-gray-200 focus:ring-2 focus:ring-blue-500"
+            />
+            <svg className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          
+          <div className="flex gap-2">
+            <button onClick={exportCSV} className="px-4 py-2 text-sm rounded-md bg-gray-100 hover:bg-gray-200">
+              Export CSV
+            </button>
+            <button onClick={exportBibTeX} className="px-4 py-2 text-sm rounded-md bg-gray-100 hover:bg-gray-200">
+              Export BibTeX
+            </button>
+          </div>
+        </div>
+
+        {/* Filters */}
+        <div className="flex flex-wrap gap-4 items-center">
+          <div className="flex gap-2">
+            {filterTypes.map(type => (
+              <button
+                key={type}
+                onClick={() => setActiveFilter(type)}
+                className={`px-3 py-1.5 text-sm rounded-md transition-colors
+                  ${activeFilter === type 
+                    ? 'bg-blue-500 text-white' 
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
+              >
+                {type.charAt(0).toUpperCase() + type.slice(1)}
+              </button>
+            ))}
+          </div>
+          
+          <div className="flex items-center gap-2">
+            <label className="text-sm text-gray-600">Year:</label>
+            <input
+              type="number"
+              value={yearRange.start}
+              onChange={(e) => handleYearRangeChange('start', parseInt(e.target.value))}
+              className="w-20 p-1.5 text-sm rounded border border-gray-200"
+            />
+            <span>-</span>
+            <input
+              type="number"
+              value={yearRange.end}
+              onChange={(e) => handleYearRangeChange('end', parseInt(e.target.value))}
+              className="w-20 p-1.5 text-sm rounded border border-gray-200"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Table Section */}
+      <div className="overflow-x-auto">
+        <table className="w-full">
+          <thead>
+            <tr className="bg-gray-50">
+              {['Author', 'Title', 'Year', 'Journal/Series', 'Type'].map(header => (
+                <th 
+                  key={header}
+                  onClick={() => {
+                    const key = header.toLowerCase();
+                    setSortConfig({
+                      key,
+                      direction: sortConfig.key === key && sortConfig.direction === 'asc' ? 'desc' : 'asc'
+                    });
+                  }}
+                  className="p-4 text-left font-medium text-gray-600 cursor-pointer hover:bg-gray-100"
+                >
+                  <div className="flex items-center gap-2">
+                    {header}
+                    {sortConfig.key === header.toLowerCase() && (
+                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        {sortConfig.direction === 'asc' ? (
+                          <path d="M8 12l4-4 4 4M8 16l4 4 4-4"/>
+                        ) : (
+                          <path d="M8 8l4 4 4-4M8 12l4 4 4-4"/>
+                        )}
+                      </svg>
+                    )}
+                  </div>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {filteredWorks.map((work) => (
+              <React.Fragment key={work.id}>
+                <tr className="hover:bg-gray-50">
+                  <td className="p-4 border-t border-gray-200">{work.author}</td>
+                  <td className="p-4 border-t border-gray-200">
+                    <div className="space-y-2">
+                      <div>{work.title}</div>
+                      <div className="flex gap-2">
+                        <button 
+                          onClick={() => setShowBibtex(showBibtex === work.id ? null : work.id)}
+                          className="text-sm text-blue-600 hover:text-blue-800"
+                        >
+                          BibTeX
+                        </button>
+                        {work.download && (
+                          <a 
+                            href={work.download} 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-blue-600 hover:text-blue-800"
+                          >
+                            Download PDF
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </td>
+                  <td className="p-4 border-t border-gray-200">{work.year}</td>
+                  <td className="p-4 border-t border-gray-200">{work.journal}</td>
+                  <td className="p-4 border-t border-gray-200">
+                    <span className="inline-block px-2 py-1 text-sm rounded-full bg-gray-100">
+                      {work.type}
+                    </span>
+                  </td>
+                </tr>
+                {showBibtex === work.id && (
+                  <tr>
+                    <td colSpan="5" className="p-4 bg-gray-50">
+                      <div className="relative">
+                        <pre className="p-4 bg-gray-100 rounded overflow-x-auto text-sm">
+                          {work.bibtex}
+                        </pre>
+                        <button
+                          onClick={() => copyBibtex(work.bibtex)}
+                          className="absolute top-2 right-2 p-2 rounded hover:bg-gray-200"
+                          title={copied ? "Copied!" : "Copy to clipboard"}
+                        >
+                          {copied ? (
+                            <svg className="w-5 h-5 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                              <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                          ) : (
+                            <svg className="w-5 h-5 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                          )}
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                )}
+              </React.Fragment>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
+
+export default WorksTable;
 </main>
 <script type="text/javascript" src="java/sticky.js"></script>
 <footer class="fixed-bottom">
