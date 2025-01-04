@@ -1,3 +1,6 @@
+// Template for all component files
+/* global React, ReactDOM */
+
 // components/CitationGenerator.js
 const CitationGenerator = ({ document }) => {
   const [citationFormat, setCitationFormat] = React.useState('apa');
